@@ -14,7 +14,7 @@
 	<div id="container">
 		<div id="container-inner">
 			<div id="login-box">
-				<div id="login-message">Welcome to the<br />CAE Application Portal</div>
+				<div id="login-message">Welcome to the<br />Williams Nature Trail App</div>
 
 				<?php echo form_open('login', 'class="my_form"'); ?>
 
@@ -48,57 +48,3 @@
 </body>
 
 </html>
-
-
-<!--
-
-<div class="block_login">
-
-	<div class="block_title">
-		<?php echo lang('login'); ?>
-	</div>
-
-	<div class="login_links">
-		<?php
-
-		/*
-		echo anchor('user/register', lang('register_account'));
-
-		if (isset($error))
-		{
-			echo '<br />'.anchor('user/forgotten_password', lang('forgotten_password'));
-		}
-		*/
-		?>
-	</div>
-
-	<div class="login_content">
-
-		<?php //echo form_open('login', 'class="my_form"'); ?>
-
-		<div class="login_labels">Email:</div>
-		<input type="text" name="email" value="<?php //echo set_value('email'); ?>" class="login_input" /><br />
-
-		<div class="login_labels">Password:</div>
-		<input type="password" name="password" value="<?php //echo set_value('password'); ?>" class="login_input" /><br />
-
-		<div class="login_buttons">
-			<input type="submit" value="<?php //echo lang('login'); ?>" class="button" />
-		</div>
-
-		</form>
-
-	</div>
-
-	<?php
-	/*
-	if (isset($error)) {
-		echo '<div class="login_error">';
-		echo $error;
-		echo '</div>';
-	}
-	*/
-	?>
-
-</div>
--->

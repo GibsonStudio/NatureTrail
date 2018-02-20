@@ -1145,7 +1145,7 @@ class User extends CI_Controller {
                 	//log in
                     $this->session->set_userdata($user);
                     $this->user_model->set_login_data($user->id);
-                    //$this->load->view('template/header');
+                    $this->load->view('template/header');
                     
                     //do we need to now redirect to desired url?
                     $url = $this->session->userdata('url_after_login') ? $this->session->userdata('url_after_login') : '';
