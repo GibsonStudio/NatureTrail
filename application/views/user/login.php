@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>CAE OAA Applications</title>
+  <title>Nature Trail</title>
   <link href="<?php echo css_path(); ?>/login.css" type="text/css" rel="stylesheet" />
   <script src="<?php echo js_path(); ?>jquery-1.10.1.min.js" type="text/javascript"></script>
   <script src="<?php echo js_path(); ?>global.inc.js" type="text/javascript"></script>

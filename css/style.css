@@ -1,19 +1,23 @@
+:root {
+  --main-color: #79B791;
+  --menu-color: #ABD1B5;
+  --hilite-color: #EDF4ED;
+  --dark1: #51291E;
+  --dark2: #301014;
+}
+
+
+
 body {
-	font-family: "Arial";
-	font-size: 12px;
-	margin: 0;
-	padding: 0;
-	background: #6c7e64;
-	color: #333333;
-    min-width: 600px;
+	font-family: "Arial"; font-size: 12px;
+	margin: 0; padding: 0; min-width: 600px;
+	background-color: #79B791; color: #333333;
 }
 
 
 #header {
-    color: #ffffff;
-    background: #88a940;
-    height: 80px;
-    position: relative;
+    color: #ffffff; background-color: #79B791;
+    height: 80px; position: relative;
 }
 
 #header_logo {
@@ -35,12 +39,12 @@ body {
 
 #header_login a {
     text-decoration: none;
-    color: inherit;    
+    color: inherit;
 }
 
 
 #footer {
-    background: #6c7e64;
+    background-color: var(--main-color);
     color: #ffffff;
     height: 30px;
 }
@@ -49,7 +53,7 @@ body {
 #copyright {
     font-size: 10px;
     text-align: center;
-    padding: 10px;        
+    padding: 10px;
 }
 
 
@@ -151,12 +155,12 @@ body {
 	font-size: 10px;
 	color: #333333;
 	border-top: 1px solid #e2e2e2;
-	padding: 4px;	
+	padding: 4px;
 }
 
 .object_tile_buttons {
 	background: #e2e2e2;
-	padding: 4px;	
+	padding: 4px;
 }
 
 
@@ -256,49 +260,11 @@ body {
 
 
 
-/* **** menu **** */
-
-/*
-#menu {
-    background: #a7bc6d;
-    font-size: 12px;
-    padding: 20px;
-    color: #ffffff;
-    text-align: right;
-    display: none;   
-}
-
-
-#menu .menu_heading:nth-child(n+2) {
-	margin-top: 20px;
-}
-
-
-.menu_heading {
-	font-weight: bold;
-	border-bottom: 1px solid #ffffff;
-}
-
-
-.menu_sub_heading {
-	display: inline-block;
-}
-
-
-#menu button {
-	border: none;
-	background: #f2f2f2;
-	color: #666666;
-	margin: 4px;
-	padding: 4px;
-}
-*/
-
 
 
 
 #menu {
-    background: #6c7e64;
+    background-color: #ABD1B5;
     font-size: 12px;
 }
 
@@ -399,7 +365,7 @@ body {
 
 .block {
 	width: 300px;
-	border: 1px solid #1777ff;
+	border: 1px solid #79B791;
 	margin-bottom: 20px;
 	border-radius: 5px;
 	font-size: 14px;
@@ -407,9 +373,9 @@ body {
 
 
 .block_heading {
-	background: #1777ff;
+	background: #79B791;
 	color: #ffffff;
-	padding: 4px;	
+	padding: 4px;
 }
 
 
@@ -422,7 +388,7 @@ body {
 
 .block_content a {
 	text-decoration: none;
-	outline : none;	
+	outline : none;
 }
 
 
@@ -510,16 +476,14 @@ body {
 
 .button {
     display: inline-block;
-    background: #1777ff;
-    color: #ffffff;
-    padding: 4px 10px;
-    margin: 2px;
+    background-color: #79B791; color: #ffffff;
+    padding: 4px 10px; margin: 2px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     text-decoration: none;
     -webkit-appearance: none;
-	-webkit-border-radius: 0; 
+	-webkit-border-radius: 0;
 }
 
 
@@ -531,10 +495,8 @@ body {
 
 .button_small {
     display: inline-block;
-    background: #1777ff;
-    color: #ffffff;
-    padding: 2px 4px;
-    margin: 2px;
+    background-color: #79B791; color: #ffffff;
+    padding: 2px 4px; margin: 2px;
     font-size: 10px;
     border: none;
     cursor: pointer;
@@ -577,7 +539,7 @@ body {
 /* //// forms //// */
 
 .my_input {
-	width: 98%;	
+	width: 98%;
 }
 
 
@@ -665,7 +627,7 @@ body {
     background: #f9f9f9;
     color: #f1645d;
     font-weight: bold;
-    font-size: 12px;	
+    font-size: 12px;
 }
 
 
@@ -738,7 +700,7 @@ body {
 
 .content_box .form_error {
     background: #ffffff;
-    text-align: center;	
+    text-align: center;
 }
 
 
@@ -836,9 +798,8 @@ table {
 
 
 .data_table {
-	background: #e2e2e2;
-	margin: auto;
-	border-radius: 10px;	
+	background: #EDF4ED;
+	margin: auto; border-radius: 10px;
 }
 
 
@@ -852,7 +813,7 @@ table {
 .data_table_title {
 	font-weight: bold;
 	font-size: 16px;
-	background: #1777ff;
+	background-color: #79B791;
 	color: #ffffff;
 }
 
@@ -863,7 +824,7 @@ table {
 
 
 .data_table_heading {
-	font-weight: bold;	
+	font-weight: bold;
 	background: #5b606c;
 	color: #ffffff;
 }
@@ -874,11 +835,8 @@ table {
 /* **** messages **** */
 
 .message {
-    background-color: #ecf7fd;
-	border: 1px solid #1777ff;
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
+  background-color: #EDF4ED; border: 1px solid #79B791;
+  max-width: 500px; margin: auto; padding: 20px;
 }
 
 
@@ -916,7 +874,7 @@ table {
 }
 
 .bug_table .field_value {
-	color: #ffffff; 
+	color: #ffffff;
 	background: #1777ff;
 }
 
@@ -946,9 +904,9 @@ table {
 	/* background: #85aad4; /* #6EA2EB; */
 	background: #f5faff;
 	border: 1px dotted #c1c1c1;
-	/* color: #ffffff; */ 
+	/* color: #ffffff; */
 	margin: 20px;
-	vertical-align: top;	
+	vertical-align: top;
 	position: relative;
 }
 
@@ -1017,7 +975,7 @@ table {
 /* **** user search **** */
 
 #usersearch {
-	width: 250px;	
+	width: 250px;
 	margin-right: 20px;
 }
 
@@ -1096,8 +1054,8 @@ table {
 	padding: 4px;
 	border: 1px solid #eb5b4d;
 	background: #f2f2f2;
-	text-decoration: none;	
-	float: left; 
+	text-decoration: none;
+	float: left;
 	color: #333333;
 	margin: auto;
 	margin-bottom: 4px;
@@ -1116,12 +1074,3 @@ table {
 .page_number:hover {
 	background: #ffec96 !important;
 }
-
-
-
-
-
-
-
-
-
