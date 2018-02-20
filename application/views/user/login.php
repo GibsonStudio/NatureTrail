@@ -1,50 +1,104 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+<!DOCTYLE HTML>
 
-<div class="center_me">
+<html>
 
-<div class="form_container">
-    
-    <div class="form_title"><?php echo lang('login'); ?></div>  
-    
-<?php echo form_open('login', 'class="my_form"'); ?>
-    
-<table class="form_table">
-    
-    <tr>
-        <td class="field_title form_required"><?php echo lang('email'); ?></td>        
-        <td class="field_value"><input type="text" name="email" value="<?php echo set_value('email'); ?>" size="50" /></td>
-    </tr>
-    <?php if (form_error('email')) { echo '<tr><td class="form_error" colspan="2">'.form_error('email').'</td></tr>'; } ?>
-    
-    <tr>
-        <td class="field_title form_required"><?php echo lang('password'); ?></td>        
-        <td class="Field_value"><input type="password" name="password" value="<?php echo set_value('password'); ?>" size="50" /></td>
-    </tr>
-    <?php if (form_error('password')) { echo '<tr><td class="form_error" colspan="2">'.form_error('password').'</td></tr>'; } ?>
-    
-    <tr>
-        <td colspan="2" class="table_buttons"><input type="submit" value="<?php echo lang('login'); ?>" class="button" /></td>
-    </tr>
-    
-    <tr>
-        <td colspan="2" class="form_message"><?php
-        	
-        	if (isset($error)) {
-            	echo $error;
-            }
+<head>
+  <title>CAE OAA Applications</title>
+  <link href="<?php echo css_path(); ?>/login.css" type="text/css" rel="stylesheet" />
+  <script src="<?php echo js_path(); ?>jquery-1.10.1.min.js" type="text/javascript"></script>
+  <script src="<?php echo js_path(); ?>global.inc.js" type="text/javascript"></script>
+</head>
 
-            if ($this->config_model->get_config('allow_registration') == 1)
-            {
-            	echo anchor('user/register', lang('register_account'));
-            }        	
-        	
-        ?></td>
-    </tr>
+<body>
 
-</table>
+	<div id="container">
+		<div id="container-inner">
+			<div id="login-box">
+				<div id="login-message">Welcome to the<br />CAE Application Portal</div>
 
-</form>
+				<?php echo form_open('login', 'class="my_form"'); ?>
+
+					<div id="username" class="login-field">
+						<div class="field-icon" id="email-icon"></div>
+						<input type="text" name="email" value="<?php echo set_value('email'); ?>" class="login_input" />
+					</div>
+
+					<div id="password" class="login-field">
+						<div class="field-icon" id="password-icon"></div>
+						<input type="password" name="password" value="<?php echo set_value('password'); ?>" class="login_input" />
+					</div>
+
+					<!--<div id="submit">SIGN IN</div>-->
+					<input id="submit" type="submit" value="SIGN IN" />
+
+				</form>
+
+
+				<div id="login-links">
+					<?php
+					echo anchor('user/forgotten_password', 'Forgotten your username or password?');
+					echo anchor('user/register', 'Create a new account');
+					?>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
+
+
+<!--
+
+<div class="block_login">
+
+	<div class="block_title">
+		<?php echo lang('login'); ?>
+	</div>
+
+	<div class="login_links">
+		<?php
+
+		/*
+		echo anchor('user/register', lang('register_account'));
+
+		if (isset($error))
+		{
+			echo '<br />'.anchor('user/forgotten_password', lang('forgotten_password'));
+		}
+		*/
+		?>
+	</div>
+
+	<div class="login_content">
+
+		<?php //echo form_open('login', 'class="my_form"'); ?>
+
+		<div class="login_labels">Email:</div>
+		<input type="text" name="email" value="<?php //echo set_value('email'); ?>" class="login_input" /><br />
+
+		<div class="login_labels">Password:</div>
+		<input type="password" name="password" value="<?php //echo set_value('password'); ?>" class="login_input" /><br />
+
+		<div class="login_buttons">
+			<input type="submit" value="<?php //echo lang('login'); ?>" class="button" />
+		</div>
+
+		</form>
+
+	</div>
+
+	<?php
+	/*
+	if (isset($error)) {
+		echo '<div class="login_error">';
+		echo $error;
+		echo '</div>';
+	}
+	*/
+	?>
 
 </div>
-    
-</div>
+-->

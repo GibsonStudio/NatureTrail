@@ -1114,7 +1114,7 @@ class User extends CI_Controller {
         
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('template/header');
+            //$this->load->view('template/header');
             $this->load->view('user/login');
         }
         else
@@ -1135,7 +1135,7 @@ class User extends CI_Controller {
                 //is user account deleted?
                 if ($user->deleted == 1)
                 {
-                    $this->load->view('template/header');
+                    //$this->load->view('template/header');
                     $data = array('message_text' => lang('account_deleted'));
                     $this->load->view('message', $data);
                 }
@@ -1145,7 +1145,7 @@ class User extends CI_Controller {
                 	//log in
                     $this->session->set_userdata($user);
                     $this->user_model->set_login_data($user->id);
-                    $this->load->view('template/header');
+                    //$this->load->view('template/header');
                     
                     //do we need to now redirect to desired url?
                     $url = $this->session->userdata('url_after_login') ? $this->session->userdata('url_after_login') : '';
@@ -1168,7 +1168,7 @@ class User extends CI_Controller {
             else
             {
                 //invalid log in
-                $this->load->view('template/header');
+                //$this->load->view('template/header');
                 
                 $error = '';
                 $error .= '<div class="login_error_message">'.lang('invalid_login').'</div><br /><br />';
@@ -1180,7 +1180,7 @@ class User extends CI_Controller {
             
         }
         
-        $this->load->view('template/footer');
+        //$this->load->view('template/footer');
         
     }
     
