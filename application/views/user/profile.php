@@ -9,6 +9,7 @@
   <div id="profile-box">
 
     <!-- profile image -->
+    <div id="profile-pic-container">
     <?php
 
         $img = '<img src="'.image_path().'profile/'.$user->profileimage.'" alt="'.$user->profileimage.'" class="profile-pic" />';
@@ -21,6 +22,7 @@
             echo $img;
         }
     ?>
+    </div>
 
 
     <!-- name -->
@@ -28,36 +30,36 @@
 
     <!-- details -->
     <?php if (!empty($user->knownas)) { ?>
-      <div><?php echo lang('knownas'); ?></div>
-      <div><?php echo $user->knownas; ?></div>
+      <div id="profile-knownas">(<?php echo $user->knownas; ?>)</div>
     <?php } ?>
-    <div><?php echo lang('email'); ?></div>
-    <div><?php echo $user->email; ?></div>
-    <div><?php echo lang('accesslevel'); ?></div>
-    <div><?php echo $this->data_model->get_value('accesslevel', 'name', $user->accesslevel); ?></div>
+    <div id="profile-email"><?php echo $user->email; ?></div>
+    <div id="profile-user-level"><?php echo $this->data_model->get_value('accesslevel', 'name', $user->accesslevel); ?></div>
 
 
     <!-- user modified logs -->
     <?php if ($this->user_model->has_permission('see_modifier')) { ?>
-      <div><?php echo lang('timemodified'); ?></div>
-      <div><?php echo timestamp_to_string($user->timemodified); ?></div>
-      <div><?php echo lang('modifierid'); ?></div>
-      <div><?php echo $this->data_model->get_name($user->modifierid); ?></div>
+      <div class="profile-log">
+        <?php
+          echo lang('timemodified').': '.timestamp_to_string($user->timemodified).'<br />';
+          echo lang('modifierid').': '.$this->data_model->get_name($user->modifierid);
+        ?>
+      </div>
     <?php } ?>
 
     <!-- user log in logs -->
     <?php if ($this->user_model->has_permission('see_login_details')) { ?>
-      <div><?php echo lang('lastlogin'); ?></div>
-      <div><?php echo timestamp_to_string($user->lastlogin); ?></div>
-      <div><?php echo lang('lastlogout'); ?></div>
-      <div><?php echo timestamp_to_string($user->lastlogout); ?></div>
-      <div><?php echo lang('lastip'); ?></div>
-      <div><?php echo $user->lastip; ?></div>
+      <div class="profile-log">
+        <?php
+          echo lang('lastlogin').': '.timestamp_to_string($user->lastlogin).'<br />';
+          echo lang('lastlogout').': '.timestamp_to_string($user->lastlogout).'<br />';
+          echo lang('lastip').': '.$user->lastip.'';
+        ?>
+      </div>
     <?php } ?>
 
 
     <!-- buttons -->
-    <div id="buttons-container">
+    <div id="profile-buttons-container">
       <?php
       if (!$this->user_model->email_confirmed($user->id))
       {
