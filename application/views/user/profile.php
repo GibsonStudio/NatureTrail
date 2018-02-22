@@ -4,14 +4,14 @@
     if (!file_exists(BASEPATH.'../images/profile/'.$user->profileimage)) { $user->profileimage = 'missing.jpg'; }
 ?>
 
-<div id="message-box-container">
+<div id="profile-box-container">
 
-  <div id="message-box">
+  <div id="profile-box">
 
     <!-- profile image -->
     <?php
 
-        $img = '<img src="'.image_path().'profile/'.$user->profileimage.'" alt="'.$user->profileimage.'" class="profile_pic" />';
+        $img = '<img src="'.image_path().'profile/'.$user->profileimage.'" alt="'.$user->profileimage.'" class="profile-pic" />';
         if ($this->user_model->has_permission('upload_profile_image'))
         {
             echo anchor('user/uploadprofileimage/'.$user->id, $img, 'title="'.lang('upload_image').'"');
@@ -24,7 +24,7 @@
 
 
     <!-- name -->
-    <div id="message-text"><?php echo $user->firstname.' '.$user->middlenames.' '.$user->lastname; ?></div>
+    <div id="profile-name"><?php echo $user->firstname.' '.$user->middlenames.' '.$user->lastname; ?></div>
 
     <!-- details -->
     <?php if (!empty($user->knownas)) { ?>
@@ -73,6 +73,6 @@
       ?>
     </div> <!-- #buttons-container -->
 
-  </div> <!-- #message-box -->
+  </div> <!-- #profile-box -->
 
-</div> <!-- #message-box-container -->
+</div> <!-- #profile-box-container -->
