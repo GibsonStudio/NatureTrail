@@ -147,7 +147,7 @@ body {
 
 /* **** buttons **** */
 .button { display:inline-block; color:#FFFFFF; background-color:#79B791; min-width:80px; padding:8px; margin:2px;
-  border:1px solid #FFFFFF; font-size:14px; text-decoration:none; text-transform:uppercase; cursor:pointer; }
+  border:1px solid #FFFFFF; font-size:14px; text-decoration:none; text-transform:uppercase; cursor:pointer; text-align:center; }
 .button:hover { color:#51291E; background-color:#EDF4ED; }
 .button_small { display:inline-block; background-color:#79B791; color:#FFFFFF; padding:2px 4px; margin:2px; font-size:10px;
     border:none; cursor:pointer; text-decoration:none; }

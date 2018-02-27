@@ -37,6 +37,9 @@ class Rarity extends CI_Controller {
 
 		$this->load->view('template/header');
 
+    $this->load->helper('formGenerator');
+
+
 		if ($this->form_validation->run() === false)
 		{
 
@@ -53,10 +56,8 @@ class Rarity extends CI_Controller {
 
 				$name = $this->data_model->get_value('rarity', 'name', $result);
 				$this->log_model->add('add_rarity', $result.': '.$name);
+        redirect('rarity/view');
 
-				$data = array('message_text' => 'Rarity '.lang('added_ok'),
-						'buttons' => array(array('button_text' => lang('view').' Rarities', 'link' => 'rarity/view')));
-				$this->load->view('message', $data);
 			}
 			else
 			{
@@ -94,13 +95,13 @@ class Rarity extends CI_Controller {
 		$this->form_validation->set_rules('name', 'Name', 'trim|required');
 		$this->form_validation->set_rules('value', 'Value', 'trim|required');
 
+    $this->load->helper('formGenerator');
 		$this->load->view('template/header');
 
 		if ($this->form_validation->run() === false)
 		{
       $data['id'] = $id;
 			$data['rarity'] = $this->rarity_model->get($id);
-      print_r($data);
 			$this->load->view('rarity/edit', $data);
 		}
 		else
@@ -113,10 +114,8 @@ class Rarity extends CI_Controller {
 
 				$rarity = $this->data_model->get_value('rarity', 'name', $id);
 				$this->log_model->add('update_rarity', $id.': '.$rarity);
+        redirect('rarity/view');
 
-				$data = array('message_text' => 'Rarity '.lang('updated_ok'),
-						'buttons' => array(array('button_text' => lang('view').' Raritites', 'link' => 'rarity/view')));
-				$this->load->view('message', $data);
 			}
 			else
 			{
@@ -160,9 +159,7 @@ class Rarity extends CI_Controller {
 				//deleted ok
 
 				$this->log_model->add('delete_rarity', $id.': '.$name);
-
-				$data = array('message_text' => 'Rarity '.lang('deleted_ok'),
-						'buttons' => array(array('button_text' => lang('view').' Rarities', 'link' => 'rarity/view')));
+        redirect('rarity/view');
 
 			}
 			else
