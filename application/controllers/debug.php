@@ -58,6 +58,11 @@ class Debug extends CI_Controller {
     	else
     	{
 
+        $sql = 'ALTER TABLE nt_bug_tracker MODIFY fixerid INT DEFAULT 0';
+        $result = $this->db->simple_query($sql);
+        $data = array('message_text' => $sql.'<hr />'.$result);
+    		$this->load->view('message', $data);
+
     		/*
     		$sql = 'CREATE TABLE IF NOT EXISTS nt_config (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), var varchar(40), value varchar(128))';
     		$result = $this->db->simple_query($sql);
@@ -103,7 +108,10 @@ class Debug extends CI_Controller {
     {
 
     	$this->load->view('template/header');
-    	$this->load->view('debug/test');
+
+      $data['userid'] = $this->session->userdata['id'];
+
+    	$this->load->view('debug/test', $data);
     	$this->load->view('template/footer');
 
     }

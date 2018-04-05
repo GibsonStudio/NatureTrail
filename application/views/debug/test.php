@@ -17,5 +17,6 @@ else
 
 echo '<hr />';
 
-echo $this->config_model->get_config('testVar', 'DEFAULT VALUE');
+echo $userid;
+
 ?>
