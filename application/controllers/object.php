@@ -156,7 +156,7 @@ class Object extends CI_Controller {
 					{
 
             redirect("object/viewall");
-            
+
 						//$name = $this->data_model->get_value('object', 'name', $insert_id);
 						//$this->log_model->add('add_object', $insert_id.': '.$name);
 

@@ -58,23 +58,26 @@ class Debug extends CI_Controller {
     	else
     	{
 
-        $sql = 'ALTER TABLE nt_bug_tracker MODIFY fixerid INT DEFAULT 0';
+        //$sql = 'ALTER TABLE nt_bug_tracker MODIFY fixerid INT DEFAULT 0';
+        //$result = $this->db->simple_query($sql);
+        //$data = array('message_text' => $sql.'<hr />'.$result);
+    		//$this->load->view('message', $data);
+
+
+        //$sql = 'ALTER TABLE nt_object ADD createdBy INT AFTER rarity, ADD modifiedBy INT AFTER createdBy';
+        //$result = $this->db->simple_query($sql);
+        //$data = array('message_text' => $sql.'<hr />'.$result);
+    		//$this->load->view('message', $data);
+
+        //$sql = 'ALTER TABLE nt_object ADD timemodified INT AFTER createdBy';
+        //$result = $this->db->simple_query($sql);
+        //$data = array('message_text' => $sql.'<hr />'.$result);
+    		//$this->load->view('message', $data);
+
+        $sql = 'ALTER TABLE nt_object CHANGE timestamp timecreated INT';
         $result = $this->db->simple_query($sql);
         $data = array('message_text' => $sql.'<hr />'.$result);
     		$this->load->view('message', $data);
-
-    		/*
-    		$sql = 'CREATE TABLE IF NOT EXISTS nt_config (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), var varchar(40), value varchar(128))';
-    		$result = $this->db->simple_query($sql);
-    		$data = array('message_text' => $sql.'<hr />'.$result);
-    		$this->load->view('message', $data);
-
-    		$sql = 'INSERT INTO nt_config (var, value) VALUES ("allow_registration", "1")';
-    		$result = $this->db->simple_query($sql);
-    		$data = array('message_text' => $sql.'<hr />'.$result);
-    		$this->load->view('message', $data);
-    		*/
-
 
     	}
 

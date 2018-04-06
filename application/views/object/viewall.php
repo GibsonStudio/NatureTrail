@@ -2,7 +2,7 @@
 <?php echo anchor('object/add', lang('add').' Object', 'class="button"'); ?>
 </div>
 <br />
-<?php 
+<?php
 
 foreach ($objects as $object)
 {
@@ -14,33 +14,41 @@ foreach ($objects as $object)
     <!-- show page selector -->
     <div class="clearfix"></div>
     <div class="center_block">
-    
-    <?php 
-    
+
+    <?php
+
     $page_count = ceil($object_count / $objects_per_page);
-    
+
     if ($page_count > 1)
     {
-    	
-    	echo '<div class="page_numbers_container"><span style="font-weight: bold; float: left; padding: 5px;">Page:</span>';
-    	
-	    for ($i = 1; $i <= $page_count; $i++)
-	    {
-	    	
-	    	if ($page == $i)
-	    	{
-	    		echo '<span class="page_number current_page">'.$i.'</span>';
-	    	}
-	    	else
-	    	{
-	    		echo anchor('object/viewall/'.$i, $i, 'class="page_number"');	
-	    	}
-	    	
-	    }   
 
-	    echo '</div>';
-	    
+    	$script = '<script>function go_page() { window.location.href=($("#page_num").val()); }</script>';
+    	echo $script;
+
+    	$p = '<select id="page_num" onchange="go_page()">';
+
+    	for ($i = 1; $i <= $page_count; $i++)
+    	{
+
+    		$link = site_url('object/viewall/'.$i);
+
+    		if ($page == $i)
+    		{
+    			$p .= '<option value="'.$link.'" selected>'.$i.'</option>';
+    		}
+    		else
+    		{
+    			$p .= '<option value="'.$link.'">'.$i.'</option>';
+    		}
+
+    	}
+
+    	$p .= '</select>';
+
+    	echo '<div class="center_me">Page '.$p.' of '.$page_count.'</div>';
+
     }
+
     ?>
-    
+
 	</div>
